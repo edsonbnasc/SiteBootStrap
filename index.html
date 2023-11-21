@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- cabeçalho, rodapé, contato, produtos // serviços, quem somos -->
+  <title>Bootstrap TECNO-DAHER</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-image: url("eletricafundo.png");
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    
+    font-size: 50px;
+  }
+  .logo {
+    color: blue;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color:#eb4a47;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color:red;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #eb4a47; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #eb4a47;
+    background-color: #fff !important;
+    color: #eb4a47;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #eb4a47 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #eb4a47;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #eb4a47;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #67768e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+      
+      <a href="#myPage"><img width="120px" src="/LOGOTIPO-TECNO-DAHER.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li><a href="#services">SERVIÇOS</a></li>
+        <li><a href="#portfolio">REALIZADOS</a></li>
+        <li><a href="#pricing">ASSINATURAS</a></li>
+        <li><a href="#about">SOBRE</a></li>
+        <li><a href="#contact">CONTATO</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Tecno-Daher</h1> 
+  <p>Fala com um especialista</p> 
+  <form>
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Email" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Enviar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<!-- Container (Serviços) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVIÇOS</h2>
+  <h4>Nossos Serviços</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>ENERGIA</h4>
+      <p>Trabalhamos com tudo relacionado a energia</p>
+    </div>
+    
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>ATENDIMENTO</h4>
+      <p>Atendemos todo o BRASIL</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>VERDE</h4>
+      <p>Fazemos o descarte de residuos conforme as normas ambientais</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERIFICADO</h4>
+      <p>Somos empresa certificada</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">Manutenção</h4>
+      <p>Os melhores profissionais</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Serviços oferecidos) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>REALIZAÇÕES</h2><br>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="./paineis.jpg" alt="manutencao" width="400" height="300">
+        <p><strong>INSTALAÇÃO</strong></p>
+    
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="./Manutencao-paineis.jpeg" alt="paineis" width="400" height="300">
+        <p><strong>MANUTENÇÃO</strong></p>
+        
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="./Manutencao-Cabine-Primaria.jpeg" alt="cabine" width="400" height="300">
+        <p><strong>PROJETOS</strong></p>
+        
+      </div>
+    </div>
+  </div><br>
+  
+  <h2>O que fazemos</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"Serviços em Cabines PRIMARIAS"<br><span>Projeto, Instalação, Consultoria e Manutenção</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Transformadores de baixa e alta tensão"<br><span>Realizamos o projeto, acompanhamento e manutenção</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Quadros eletricos em geral"<br><span>Trabalhamos com as melhores marcas e profissionais do mercado</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Tratamento de oleo em Transformadores"<br><span>Realizamos a troca e tratamento de oleo em transformadores</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">anterior</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">proximo</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (Pricing Section) -->
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2>Preços</h2>
+    <h4>Temos opções para todos os nossos clientes</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Basico</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>1</strong> Consulta de Projeto</p>
+          <p><strong>5</strong> Visitas tecnicas</p>
+          <p><strong>5</strong> Instalação</p>
+        
+        </div>
+        <div class="panel-footer">
+          <h3>R$ consulte</h3>
+          
+          <a href="#contact"><button class="btn btn-lg">Contato</button></a>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Profissional</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>5</strong> Consulta de Projeto</p>
+          <p><strong>10</strong> Visitas tecnicas</p>
+          <p><strong>10</strong> Instalação</p>
+        </div>
+        <div class="panel-footer">
+          <h3>R$ consulte</h3>
+          
+          <a href="#contact"><button class="btn btn-lg">Contato</button></a>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Premium</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>10</strong> Consulta de Projeto</p>
+          <p><strong>20</strong> Visitas tecnicas</p>
+          <p><strong>25</strong> Instalação</p>
+          <p><strong>10</strong> Acompanhamento técnico</p>
+        </div>
+        <div class="panel-footer">
+          <h3>R$ consulte</h3>
+          <a href="#contact"><button class="btn btn-lg">Contato</button></a>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+<!-- Container (Sobre e Quem somos) -->
+<div id="about" class="container-fluid">
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-globe logo slideanim"></span>
+      </div>
+      <div class="col-sm-8">
+        <h2>Nossos Valores</h2>
+        <h4><strong>MISSÃO:</strong> Atender a clientes exigentes com mão de obra qualificada e qualidade dentro das normas de segurança e proteção.Tudo isso com o melhor custo x benefício da região.</h4>
+        <h4><strong>EMPRESA:</strong> A Tecno Daher Soluções Elétricas é uma empresa que tem como base a segurança de tudo que envolve uma manutenção, além da qualidade e atendimento personalizado.
+        Estamos na cidade de Osasco desde 2007 com uma estrutura ampla para serviços de retrofitting, montagem de painéis e outros.</h4>
+        <h4><strong>EXPERIÊNCIA:</strong> Fundada em 2007, temos mais de 15 anos de experiência em manutenções preventvas e corretivas de MT e outros segmento da área elétrica industrial, com profissionais treinados, capacitados para atender sua empresa.</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Quem Somos</h2><br>
+      <h4>A Tecno Daher Soluções Elétricas é uma empresa que tem como base a segurança de tudo que envolve uma manutenção, além da qualidade e atendimento personalizado.</h4><br>
+      <p>Estamos na cidade de Osasco desde 2007 com uma estrutura ampla para serviços de retrofitting, montagem de painéis e outros.</p>
+      <br><button class="btn btn-default btn-lg"><a href="#contact">ENTRE EM CONTATO</a> </button>
+    </div>
+    <div class="col-sm-4">
+      <img src="/LOGOTIPO-TECNO-DAHER.png" alt="">
+    </div>
+  </div>
+</div>
+<!-- Container (informações de contato)-->
+<img src="/img_map.png" class="w3-image w3-greyscale-med"  width="100%">
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">Contato</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Entre em contato conospo por e-mail ou pela nossas redes sociais.</p>
+      <a href="https://www.instagram.com/tecnodahersolucoeseletricas/" target="_blank">
+        <i class="bi bi-instagram"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+        </svg></a>
+        <a href="https://www.facebook.com/tecnodahersolucoeseletricas/" target="_blank">
+          <i class="bi bi-facebook"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+          </svg></a><br>
+      
+      <p><span class="glyphicon glyphicon-map-marker"></span>R. Santa Rita de Cássia - Km 18, Osasco - SP, 06190-010</p>
+      <p><span class="glyphicon glyphicon-phone"></span>(11)2576-0175 (11) 9 7336-7954 </p>
+      <p><span class="glyphicon glyphicon-envelope"></span>tecnodaher@tecnodaher.com.br milton@tecnodaher.com.br</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Nome" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="E-mail" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Mensagem" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Bootstrap Atividade EDSON BATISTA</p>
+  <p>Todos os direitos reservados. Desenvolvido por SERVIÇO NACIONAL DE APRENDIZAGEM INDÚSTRIAL - SENAI</p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {  
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        window.location.hash = hash;
+      });
+    } 
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
